@@ -1,11 +1,6 @@
 const {Server} = require('http');
+const {count} = require('./count');
 
-let i = 0;
-
-const server = new Server((req, res) => {
-  "use strict";
-  i+= 1;
-  res.end(i.toString());  //(!!! toString)
-});
+const server = new Server(count);
 
 server.listen(8000);
